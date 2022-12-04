@@ -44,6 +44,7 @@ The following **additional** features are implemented:
 Here's a walkthrough of implemented user stories:
 
 > Please record screen to a GIF file and attach link here
+https://docs.google.com/document/d/1FOAntN5HawIIvgxpnrUxo-0MGipflmdvE8QJzfQRTvY/edit?usp=sharing
 
 ## License
 
