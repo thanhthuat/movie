@@ -1,47 +1,62 @@
-# redux-saga example
+# run project 
 
-Usually splitting your app state into `pages` feels natural, but sometimes you'll want to have global state for your app. This is an example using `redux` and `redux-saga` that works with universal rendering. This is just one way it can be done. If you have any suggestions or feedback please submit an issue or PR.
+ yarn install 
 
-> This example and documentation is based on the [with-redux](https://github.com/vercel/next.js/tree/canary/examples/with-redux) example.
+ yarn dev  or npm run dev 
 
-## Deploy your own
+ # require 
+ node :16.0
 
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example) or preview live with [StackBlitz](https://stackblitz.com/github/vercel/next.js/tree/canary/examples/with-redux-saga)
+ # Project - *Movies*
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-redux-saga&project-name=with-redux-saga&repository-name=with-redux-saga)
+**Movies** is a movies app using the [The Movie Database API](https://developers.themoviedb.org/3).
 
-## How to use
+Time spent: **HH** hours spent in total
 
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init), [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/), or [pnpm](https://pnpm.io) to bootstrap the example:
+## User Stories
 
-```bash
-npx create-next-app --example with-redux-saga with-redux-saga-app
-```
+The following **required** functionality is completed:
 
-```bash
-yarn create next-app --example with-redux-saga with-redux-saga-app
-```
+- [ Done] User can view a list of movies currently playing in theaters. Poster images load asynchronously.
+- [ Done] User can view movie details by tapping on a cell.
+- [ Done] User sees loading state while waiting for the API.
+- [Done ] User sees an error message when there is a network error.
+- [Done ] User can pull to refresh the movie list.
+- [Doen ] Simple responsive.
 
-```bash
-pnpm create next-app --example with-redux-saga with-redux-saga-app
-```
+The following **optional** features are implemented:
 
-Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
+- [ Done] Add a tab bar for **Now Playing** and **Top Rated** movies.
+- [ ] Implement segmented control to switch between list view and grid view.
+- [Done ] Add a search bar.
+- [ ] All images fade in.
+- [ ] Implement lazy load image.
+- [ ] Customize the highlight and selection effect of the cell.
+- [ ] Improve UX loading by skeleton loading.
+- [Done ] Enhance responsive.
 
-## Notes
+The following **additional** features are implemented:
 
-In the first example we are going to display a digital clock that updates every second. The first render is happening in the server and then the browser will take over. To illustrate this, the server rendered clock will have a different background color than the client one.
+- [ ] List anything else that you can get done to improve the app functionality!
 
-![](https://i.imgur.com/JCxtWSj.gif)
+## Video Walkthrough
 
-Our page is located at `pages/index.js` so it will map the route `/`. To get the initial data for rendering we are implementing the static method `getInitialProps`, initializing the redux store and dispatching the required actions until we are ready to return the initial state to be rendered. Since the component is wrapped with `next-redux-wrapper`, the component is automatically connected to Redux and wrapped with `react-redux Provider`, that allows us to access redux state immediately and send the store down to children components so they can access to the state when required.
+Here's a walkthrough of implemented user stories:
 
-For safety it is recommended to wrap all pages, no matter if they use Redux or not, so that you should not care about it anymore in all child components.
+> Please record screen to a GIF file and attach link here
 
-`withRedux` function accepts `makeStore` as first argument, all other arguments are internally passed to `react-redux connect()` function. `makeStore` should return a new instance of redux store each time when called, no memoization needed here. See the [full example](https://github.com/kirill-konshin/next-redux-wrapper#usage) in the Next Redux Wrapper repository.
+## License
 
-The trick here for supporting universal redux is to separate the cases for the client and the server. When we are on the server we want to create a new store every time, otherwise different users data will be mixed up. If we are in the client we want to use always the same store and hydrate it when needed. That's what we accomplish in `store.js`
+    Copyright [2016] [your-name]
 
-The clock, under `components/clock.js`, has access to the state using the `connect` function from `react-redux`. In this case Clock is a direct child from the page but it could be deep down the render tree.
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
 
-The second example, under `components/counter.js`, shows a simple add counter function with a class component implementing a common redux pattern of mapping state and props. Again, the first render is happening in the server and instead of starting the count at 0, it will dispatch an action in redux that starts the count at 1. This continues to highlight how each navigation triggers a server render first and then a client render second, when you navigate between pages.
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
