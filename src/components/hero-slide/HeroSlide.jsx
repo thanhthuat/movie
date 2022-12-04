@@ -10,6 +10,7 @@ import tmdbApi, { category, movieType } from '../../api/tmdbApi';
 import apiConfig from '../../api/apiConfig';
 import { useDispatch } from 'react-redux';
 import { getMovieCarouselList } from '../../redux/actions';
+import { useRouter } from 'next/router';
 
 
 
@@ -65,7 +66,7 @@ const HeroSlide = () => {
 
 const HeroSlideItem = props => {
 
-    let hisrory = null ;
+    let hisrory = useRouter() ;
 
     const item = props.item;
 

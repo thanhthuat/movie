@@ -10,6 +10,7 @@ import Header from '../components/header/Header';
 import { useDispatch, useSelector } from 'react-redux';
 import { getMovieList } from '../redux/actions';
 import LoadingFullScreen from '../components/Loading/LoadingFullScreen';
+import Footer from '../components/footer/Footer';
 
 const Home = () => {
   const {loading } = useSelector((state)=>state.getMovieCarouselList);
@@ -60,7 +61,9 @@ const Home = () => {
                     </div>
                     <MovieList category={category.tv} type={tvType.top_rated}/>
                 </div>
-            </div> </>}
+            </div>
+            <Footer/>
+             </>}
            
         </>
     );

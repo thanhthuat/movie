@@ -5,6 +5,7 @@ import { category as cate } from '../api/tmdbApi';
 import MovieGrid from '../components/movie-grid/MovieGrid';
 import { useRouter } from 'next/router';
 import Header from '../components/header/Header';
+import Footer from '../components/footer/Footer';
 
 const Catalog = () => {
     const router = useRouter();
@@ -21,6 +22,7 @@ const Catalog = () => {
                     <MovieGrid category={check !==-1 ?'movie':'tv'}/>
                 </div>
             </div>
+            <Footer/>
         </>
     );
 }

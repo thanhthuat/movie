@@ -13,6 +13,7 @@ import { useRouter } from 'next/router';
 import Header from '../../components/header/Header';
 import LoadingFullScreen from '../../components/Loading/LoadingFullScreen';
 import alert from '../../components/Loading/arlert';
+import Footer from '../../components/footer/Footer';
 
 const Detail = () => {
     const router = useRouter();
@@ -83,6 +84,7 @@ const Detail = () => {
                                 <MovieList category={'tv' ||null} type="similar" id={item.id}/>
                             </div>
                         </div>
+                        <Footer/>
                     </>
                 ) 
             }

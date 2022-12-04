@@ -48,8 +48,8 @@ const router =useRouter();
         <div ref={headerRef} className="header">
             <div className="header__wrap container">
                 <div className="logo">
-                    <img src={''} alt="" />
-                    <Link href="/">tMovies</Link>
+                   
+                    <Link href="/">Movies</Link>
                 </div>
                 <ul className="header__nav">
                     {
